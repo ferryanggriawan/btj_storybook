@@ -1,4 +1,4 @@
-# storybook
+# btj_storybook
 
 ## Project setup
 ```
