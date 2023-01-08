@@ -1,7 +1,28 @@
 {
   "name": "btj_storybook",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "homepage": "https://btj-storybook.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferryanggriawan/btj_storybook"
+  },
+  "bugs": {
+    "url": "https://github.com/ferryanggriawan/btj_storybook/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/btj_storybook.common.js",
+  "module": "./dist/btj_storybook.common.js",
+  "exports": {
+    ".": {
+      "import": "./dist/btj_storybook.common.js",
+      "require": "./dist/btj_storybook.common.js"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,7 +30,7 @@
     "build:lib": "vue-cli-service build --target lib ./src/lib/index.js && npm run build:css",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "npx tailwindcss -i ./src/assets/styles/main.css -o ./src/assets/style.css && build-storybook"
   },
   "dependencies": {
     "core-js": "^3.8.3",
